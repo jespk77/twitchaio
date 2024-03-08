@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "TwitchAIO"
+description = "Asynchronous Twitch API interface"
+readme = "README.md"
+license = { text = "MIT License" }
+keywords = [ "twitch", "asynchronous", "twitch chat", "twitch api"]
+authors = [ { name = "jespk77" } ]
+maintainers = [ { name = "jespk77" } ]
+version = "0.5"
+requires-python = ">= 3.9"
+dependencies = [
+    "aiohttp>=3.9",
+    "websockets>=61"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+]
+
+[project.urls]
+home = "https://github.com/jespk77/twitchaio"
