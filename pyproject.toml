@@ -9,7 +9,7 @@ license = { text = "MIT License" }
 keywords = [ "twitch", "asynchronous", "twitch chat", "twitch api"]
 authors = [ { name = "jespk77" } ]
 maintainers = [ { name = "jespk77" } ]
-version = "0.5"
+version = "0.5.post0"
 requires-python = ">= 3.9"
 dependencies = [
     "aiohttp>=3.9",
