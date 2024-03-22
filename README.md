@@ -5,7 +5,7 @@ Asynchronous Twitch interface for implementing custom chatbots
 - Send/receive Twitch chat messages
 - Command system for chat interaction
 - Interface with the Twitch API to allow automating parts of the stream
-- Websocket based events with the Twitch PubSub system
+- Websocket based events with the Twitch EventSub system
 
 ## Getting started
 1. Install TwitchAIO with 
