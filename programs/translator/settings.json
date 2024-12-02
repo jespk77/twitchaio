@@ -1,0 +1,14 @@
+{
+  "blacklist_file": "",
+  "ignored_users": ["streamelements", "nightbot", "streamlabs", "moobot"],
+  "ignored_words_file": "",
+  "translation": {
+    "minimal_confidence": 40,
+    "target_language_code": "en"
+  },
+  "twitch": {
+    "authentication_file": "translator.json",
+    "join_channels": [],
+    "username": ""
+  }
+}
