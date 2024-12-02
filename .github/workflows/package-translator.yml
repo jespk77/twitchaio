@@ -1,0 +1,26 @@
+name: Build Translator release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-executable:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: | 
+          python -m pip install pip --upgrade
+          pip install -r requirements.txt
+          pip install pyinstaller
+      - name: Build executable
+        run: |
+          pyinstaller --onefile translator.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: TwitchTranslator
+          path: dist/TwitchTranslator.exe
