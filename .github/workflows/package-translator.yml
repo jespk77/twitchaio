@@ -2,10 +2,26 @@ name: Build Translator release
 
 on:
   workflow_dispatch:
+    inputs:
+      title:
+        description: "The title of the release"
+        default: "TwitchTranslator"
+        required: true
+        type: string
+      body:
+        description: "The body of the release message"
+        type: string
+      tag:
+        description: "The release tag"
+        type: string
+
+permissions:
+  packages: write
+  contents: write
 
 jobs:
   build-executable:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -18,9 +34,18 @@ jobs:
           pip install pyinstaller
       - name: Build executable
         run: |
-          pyinstaller --onefile programs/translator/translator.py -n TwitchTranslator
+          pyinstaller programs/translator/TwitchTranslator.spec
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: TwitchTranslator
-          path: dist/TwitchTranslator.exe
+          path: dist/
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ inputs.title }}
+          tag_name: ${{ inputs.tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            dist/TwitchTranslator.exe
+            programs/translator/settings.json
