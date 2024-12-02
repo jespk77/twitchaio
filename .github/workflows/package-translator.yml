@@ -18,7 +18,7 @@ jobs:
           pip install pyinstaller
       - name: Build executable
         run: |
-          pyinstaller --onefile translator.py
+          pyinstaller --onefile programs/translator/translator.py
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
