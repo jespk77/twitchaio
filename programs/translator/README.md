@@ -5,7 +5,7 @@ The script sends incoming messages automatically to Google Translate which detec
 ![example](example.png)
 
 ## Installation
-1. Download `TwitchTranslator.exe` and `settings.json` from https://github.com/jespk77/twitchaio/releases/tag/1.0
+1. Download `TwitchTranslator.exe` and `settings.json` from https://github.com/jespk77/twitchaio/releases/
 2. Follow https://github.com/jespk77/twitchaio?tab=readme-ov-file#getting-started to set up your Twitch developer application: the `client.json` file needs to be put in the same folder as the translator
 3. Open `settings.json` and fill in the required parameters:
    - `blacklist_file`: [optional] the list of words to blacklist, if any of these words appear in the translated sentence they will be replaced with ***. If provided, should be a text file with one word (or combination of words) per line, not case-sensitive.\
